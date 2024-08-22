@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            overflow: hidden;
+            margin:auto;
+        }
+        .one{
+           display:flex;
+           justify-content: space-around;
+           align-items:center;
+           flex-direction: column;
+           border:2px solid black;
+           width:30vw;
+           height:90vh;
+           margin:auto;
+          
+          
+           
+        }
+        .two{
+            display:grid;
+            grid-template-columns: repeat(4,auto);
+            width:30vw;
+            height:60vh;
+        }
+        
+        
+        input{
+            height:10vh;
+            width:25vw;
+        }
+        .btn1{
+            background-color: red;
+        }
+        .op{
+            background-color: yellow;
+        }
+        input{
+            border:30px solid black;
+        }
+        button:hover{
+            cursor:pointer;
+            background-color:black;
+            color:white;
+            
+        }
+        #b18{
+           
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+    
+     <div class="one"> 
+     <h1>MINI CALCULATOR</h1>  
+
+    <input type="text" readonly> 
+    <div class="two">
+    <button class="btn1" onclick="clr()">clear</button>
+    <button onclick="fun(this)">%</button>
+    <button class="btn1" onclick="removeLast()">c</button>
+   
+    <button class="op" onclick="fun(this)">/</button>
+    <button onclick="fun(this)">7</button>
+    <button onclick="fun(this)">8</button>
+    <button onclick="fun(this)">9</button>
+    <button class="op" onclick="fun(this)">*</button>
+    <button onclick="fun(this)">4</button>
+    <button onclick="fun(this)">5</button>
+    <button onclick="fun(this)">6</button>
+    <button class="op" onclick="fun(this)">-</button>
+    <button onclick="fun(this)">1</button>
+    <button onclick="fun(this)">2</button>
+    <button onclick="fun(this)">3</button>
+    <button class="op" onclick="fun(this)">+</button>
+    <button onclick="fun(this)">00</button>
+
+    <button onclick="fun(this)">0</button>
+    <button onclick="fun(this)">.</button>
+    <button id="b18" onclick="cal()">=</button>
+    <button onclick="power()">x<sup>2</sup></button>
+    <button onclick="squareroot()"><i class="fa-solid fa-square-root-variable"></i></button>
+    <button onclick="fun(this)">(</button>
+    <button onclick="fun(this)">)</button>
+
+    </div>
+    
+</div>
+<script>
+     let inp=document.getElementsByTagName("input")[0]
+    
+    function fun(ele){
+       inp.value+=ele.innerHTML
+        
+       
+       
+    }
+    function cal(){
+       inp.value=eval(inp.value)
+        
+    }
+        
+       function clr() {
+            inp.value = "";
+        }
+
+        function removeLast() {
+            inp.value = inp.value.slice(0, -1);
+        }
+        function power(){
+            inp.value=inp.value**2
+         }
+         function squareroot(){
+            inp.value=inp.value**0.5
+
+         }
+         
+</script> 
+</body>
+</html>
